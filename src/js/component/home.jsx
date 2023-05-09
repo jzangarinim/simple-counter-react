@@ -37,17 +37,7 @@ const Home = () => {
   document.title = `Counting... ${count}`;
 
   return (
-    <div className="text-center bg-dark">
-      <div className="notify text-white">
-        Notify me when the counter reaches:
-        <input
-          type="number"
-          className="col-1 ms-1 mt-5 mb-3 justify-content-start"
-          onBlur={() => {
-            setNotify(Number(event.target.value));
-          }}
-        />
-      </div>
+    <div className="text-center pt-3 bg-dark">
       <h1 className="text-center text-white">Counter</h1>
       {/* Change step */}
       <div className="step-changer">
@@ -81,7 +71,7 @@ const Home = () => {
         notify={notify}
       />
       {/* Buttons */}
-      <div className="buttons pb-5">
+      <div className="buttons mb-3">
         <button className="me-1" onClick={() => handleReset()}>
           Reset
         </button>
@@ -91,6 +81,17 @@ const Home = () => {
         <button className="me-1" onClick={() => handleResume()}>
           Resume
         </button>
+      </div>
+
+      <div className="notify text-white">
+        Notify me when the counter reaches:
+        <input
+          type="number"
+          className="col-1 ms-1 mb-3 justify-content-start"
+          onBlur={() => {
+            setNotify(Number(event.target.value));
+          }}
+        />
       </div>
     </div>
   );
